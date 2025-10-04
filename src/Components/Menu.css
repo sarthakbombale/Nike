@@ -1,0 +1,102 @@
+.menu-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  gap: 25px;
+  margin-top: 30px;
+}
+
+@media (max-width: 1200px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row on smaller screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-grid {
+    grid-template-columns: 1fr; /* 1 item per row on mobile */
+  }
+}
+
+
+.menu-item {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  padding: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a gradient overlay for better text visibility */
+.menu-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0));
+  border-radius: 15px;
+  z-index: 0;
+  
+}
+
+/* Ensure text is above overlay */
+.menu-item span {
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+/* Hover effects */
+.menu-item:hover {
+  transform: scale(1.08) rotate(-1deg);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.1);
+}
+
+/* Optional: subtle pulse animation on hover */
+.menu-item:hover::after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  top: -10%;
+  left: -10%;
+  animation: pulse 0.6s ease-out;
+  
+}
+
+@keyframes pulse {
+  0% { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+
+.menu-item h3 {
+  color: #d6d3d3;
+  transition: color 0.3s;
+}
+
+.menu-item:hover h3 {
+  color: black;
+}

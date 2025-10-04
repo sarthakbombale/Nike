@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+:root {
+  --red: #d01c28;
+  --gray: #2e2e2e;
+  --light-gray: #f5f5f5;
+  --dark: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--gray);
+  background: #fff;
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  height: 72px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+nav .logo img {
+  height: 40px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+
+nav ul li a {
+  color: var(--gray);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--red);
+}
+
+nav button {
+  all: unset;
+  padding: 8px 20px;
+  background: var(--red);
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+nav button:hover {
+  background: #a3131f;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero h1 {
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 1.2;
+  color: var(--dark);
+}
+
+.hero p {
+  font-size: 18px;
+  margin-top: 20px;
+  color: var(--gray);
+}
+
+.hero-btn {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-btn button {
+  padding: 12px 28px;
+  background: var(--red);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-btn button:hover {
+  background: #a3131f;
+  transform: translateY(-2px);
+}
+
+/* Shopping Section */
+.shopping {
+  margin-top: 40px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.shopping p {
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: var(--gray);
+}
+
+/* Brand Icons */
+.brand-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.brand-icon {
+  background: var(--light-gray);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+}
+
+.brand-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+.brand-icon img {
+  width: 100%;
+  max-width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Hero Image */
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  object-fit: contain;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  nav ul {
+    gap: 16px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content,
+  .hero-image {
+    width: 100%;
+  }
+
+  .hero-btn {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  nav {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-btn button {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .brand-icon {
+    width: 56px;
+    height: 56px;
+    padding: 10px;
+  }
+
+  .brand-icon img {
+    max-width: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-icons {
+    gap: 16px;
+  }
+
+  .brand-icon {
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+  }
+
+  .brand-icon img {
+    max-width: 24px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+}
+
+
+/* for smooth scroling */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* menu page css */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.menu-item {
+  text-align: center;
+}
+
+.menu-item img {
+  width: 100%;
+  max-width: 250px;
+}

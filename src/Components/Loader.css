@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e60012; /* Nike Red */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  transition: opacity 0.8s ease, visibility 0.2s ease;
+}
+
+/* Faster Dots Animation */
+.dots-loader {
+  width: 80px;
+  aspect-ratio: 4;
+  --_g: no-repeat radial-gradient(circle closest-side, white 90%, #0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 100%;
+  animation: l7 0.8s infinite linear;
+}
+
+@keyframes l7 {
+  33% { background-size: calc(100%/3) 0%, calc(100%/3) 100%, calc(100%/3) 100% }
+  50% { background-size: calc(100%/3) 100%, calc(100%/3) 0%, calc(100%/3) 100% }
+  66% { background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0% }
+}
+
+/* NIKE text */
+.loader-text {
+  color: white;
+  font-size: 5.5rem; /* Slightly smaller for better balance */
+  font-weight: 700;
+  font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  animation: fade-bounce 0.3s ease-out forwards;
+    
+}
+
+@keyframes fade-bounce {
+  0% { opacity: 0; transform: scale(0.85) translateY(-20px); }
+  60% { opacity: 1; transform: scale(1.05) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Smooth fade-out effect */
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
